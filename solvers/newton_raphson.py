@@ -1,41 +1,41 @@
+from typing import Dict, Any
 import sympy as sp
-from .utils import parsear_funcion
 
-def resolver_newton_raphson(expr_str: str, x0: float, tol: float, max_iter: int = 100):
-    expr, var, f = parsear_funcion(expr_str)
-    expr_df = sp.diff(expr, var)
-    df = sp.lambdify(var, expr_df, modules=['math', 'sympy'])
+def resolver_newton_raphson(expresion: str, x0: float, tolerancia: float, max_iter: int = 100) -> Dict[str, Any]:
+    x = sp.Symbol('x')
+    f_expr = sp.sympify(expresion)
+    df_expr = sp.diff(f_expr, x)  # Derivada analítica automática
+
+    f = sp.lambdify(x, f_expr, 'math')
+    df = sp.lambdify(x, df_expr, 'math')
 
     iteraciones = []
-    x_actual = x0
+    xi = float(x0)
 
     for i in range(1, max_iter + 1):
-        fx = float(f(x_actual))
-        dfx = float(df(x_actual))
+        df_val = df(xi)
+        if df_val == 0:
+            raise ValueError(f"La derivada f'(x) se anuló en x = {xi}. El método se detiene.")
 
-        if dfx == 0:
-            raise ValueError(f"La derivada f'({x_actual}) es cero.")
-
-        x_siguiente = x_actual - (fx / dfx)
-        error = abs(x_siguiente - x_actual)
+        f_val = f(xi)
+        xi_sig = xi - (f_val / df_val)
+        error = abs(xi_sig - xi)
 
         iteraciones.append({
             "iteracion": i,
-            "x": round(x_actual, 6),
-            "fx": round(fx, 6),
-            "dfx": round(dfx, 6),
-            "x_siguiente": round(x_siguiente, 6),
+            "xi": round(xi, 6),
+            "f_xi": round(f_val, 6),
+            "df_xi": round(df_val, 6),
+            "xi_siguiente": round(xi_sig, 6),
             "error": round(error, 6)
         })
 
-        if error < tol or abs(fx) < tol:
+        if error < tolerancia:
             break
 
-        x_actual = x_siguiente
+        xi = xi_sig
 
     return {
-        "variable": str(var),
-        "expresion": str(expr),
-        "derivada": str(expr_df),
+        "derivada": str(df_expr),
         "iteraciones": iteraciones
     }

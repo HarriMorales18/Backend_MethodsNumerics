@@ -18,7 +18,7 @@ class PuntoFijoRequest(BaseModel):
 
 # Validación para Método de Newton-Raphson
 class NewtonRaphsonRequest(BaseModel):
-    expresion: str = Field(..., description="Función f(x)", example="x^3 - x - 2")
-    x0: float = Field(..., description="Punto inicial de aproximación", example=1.5)
-    tolerancia: float = Field(..., description="Tolerancia del error", example=0.01)
+    expresion: str = Field(..., description="Función f(x)", example="x**3 - 2*x - 5")
+    x0: float = Field(..., description="Punto inicial de aproximación", example=2.0)
+    tolerancia: float = Field(..., description="Tolerancia del error", example=0.7)
     max_iter: Optional[int] = Field(default=100, description="Límite máximo de iteraciones", example=100)
