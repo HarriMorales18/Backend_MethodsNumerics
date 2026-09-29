@@ -1,10 +1,41 @@
+<p align="right">
+  <b>Cambiar idioma / Change language:</b><br>
+  <a href="./README.md"><img src="https://img.shields.io/badge/Idioma-Español-blue?style=for-the-badge&logo=spain" alt="Español"></a>
+  <a href="./README.en.md"><img src="https://img.shields.io/badge/Language-English-red?style=for-the-badge&logo=unitedstates" alt="English"></a>
+</p>
+
+---
+
 # 🧮 Numerical Methods API Core (Backend)
 
-**CEO del Proyecto:** Harrinson D Morales Tejedor.
-
-**CEO del Proyecto:** Jhon D Arrieta Tovar.
-
-**CEO del Proyecto:** Juan D Navarro Garcia.
+<table>
+  <tr>
+    <td align="center" width="260px">
+      <a href="https://github.com/HarriMorales18">
+        <img src="./assets/HarriMorales18.png" width="120px" height="120px" style="border-radius: 50%; object-fit: cover;" alt="HarriMorales18"/><br />
+        <b>HarriMorales18</b>
+      </a><br />
+      <small><b>Harrinson D. Morales Tejedor(CEO and Dev)</b></small><br />
+      <small>Angular Developer | Python Developer | Scrum Master</small>
+    </td>
+    <td align="center" width="260px">
+      <a href="https://github.com/jhonarrieta2050">
+        <img src="./assets/jhonarrieta2050.png" width="120px" height="120px" style="border-radius: 50%; object-fit: cover;" alt="jhonarrieta2050"/><br />
+        <b>jhonarrieta2050</b>
+      </a><br />
+      <small><b>Jhon D. Arrieta Tovar(Dev)</b></small><br />
+      <small>Backend Developer | Java & Spring Boot | Cloud Engineer</small>
+    </td>
+    <td align="center" width="260px">
+      <a href="https://github.com/JuanGarcia0209">
+        <img src="./assets/JuanGarcia0209.png" width="120px" height="120px" style="border-radius: 50%; object-fit: cover;" alt="JuanGarcia0209"/><br />
+        <b>JuanGarcia0209</b>
+      </a><br />
+      <small><b>Juan D. Navarro Garcia(Dev)</b></small><br />
+      <small>Backend Developer | PHP & Laravel | Data Analyst & Troubleshooting</small>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -130,11 +161,3 @@ Backend_MethodsNumerics/
 
 El cliente frontend desarrollado en Angular para interactuar con este backend está disponible en:
 👉 [https://github.com/HarriMorales18/Frontend_MethodsNumerics.git](https://github.com/HarriMorales18/Frontend_MethodsNumerics.git)
-
----
-
-## 👥 8. Colaboradores
-
-* **HarriMorales18** *(Angular Developer | Python Developer | Scrum Master)*
-* **jhonarrieta2050** *(Backend Developer | Java & Spring Boot | Cloud Engineer)*
-* **JuanGarcia0209** *(Backend Developer | PHP & Laravel | Data Analyst & Troubleshooting)*
