@@ -5,12 +5,14 @@ from schemas import (
     BiseccionFalsaPosicionRequest,
     PuntoFijoRequest,
     NewtonRaphsonRequest,
+    SecanteRequest,
 )
 from solvers import (
     resolver_biseccion,
     resolver_falsa_posicion,
     resolver_punto_fijo,
     resolver_newton_raphson,
+    resolver_secante,
 )
 
 app = FastAPI(
@@ -66,6 +68,16 @@ def endpoint_newton_raphson(req: NewtonRaphsonRequest):
     try:
         res = resolver_newton_raphson(
             req.expresion, req.x0, req.tolerancia, req.max_iter
+        )
+        return {"ok": True, "data": res}
+    except Exception as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+@app.post("/api/secante")
+def endpoint_secante(req: SecanteRequest):
+    try:
+        res = resolver_secante(
+            req.expresion, req.x0, req.x1, req.tolerancia, req.max_iter
         )
         return {"ok": True, "data": res}
     except Exception as e:
